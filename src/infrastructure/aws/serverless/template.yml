@@ -1,0 +1,13 @@
+# CONCEPTUAL TEMPLATE ONLY
+Resources:
+  NotesAPI:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/lambda.handler
+      Runtime: python3.9
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /notes
+            Method: GET

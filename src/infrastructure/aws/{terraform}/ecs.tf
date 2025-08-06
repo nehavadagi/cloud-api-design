@@ -18,3 +18,20 @@ resource "aws_appautoscaling_target" "api_scaling" {
   min_capacity       = 1
   max_capacity       = 10
 }
+
+# DESIGN ONLY - Not for deployment
+resource "aws_ecs_cluster" "design_proof" {
+  name = "notes-api-cluster"  # Theoretical resource
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
+  tags = {
+    Purpose = "Academic design exercise - CMP9785M"
+  }
+}
+
+# Theoretical output (reference in Design Doc p.7)
+output "cluster_name" {
+  value = aws_ecs_cluster.design_proof.name
+}
