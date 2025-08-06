@@ -1,0 +1,14 @@
+name: Security Checks
+
+on: [pull_request]
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mock Security Scan
+        run: |
+          echo "Would run:"
+          echo "- Bandit (Python SAST)"
+          echo "- TFsec (Terraform scanning)"
+          echo "- OWASP ZAP (API security)"
